@@ -1,0 +1,36 @@
+* {
+  margin: 20px;
+}
+
+.wrapper {
+  display: grid;
+  justify-content: space-around;
+  grid-template-columns: 200px 200px;
+  grid-template-rows: 150px 150px;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.buttons {
+  text-align: right;
+}
+.one {
+  background-color: lightgray;
+  text-align: center;
+  line-height: 100px;
+}
+.two {
+  background-color: lightgray;
+  text-align: center;
+  line-height: 100px;
+}
+.three {
+  background-color: lightgray;
+  text-align: center;
+  line-height: 100px;
+}
+.four {
+  background-color: lightgray;
+  text-align: center;
+  line-height: 100px;
+}
