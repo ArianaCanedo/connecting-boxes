@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { SteppedLineTo } from "react-lineto";
+import Xarrow from "react-xarrows";
 import "./App.css";
 
 function App() {
@@ -8,25 +8,23 @@ function App() {
   const [connections, setConnections] = useState([]);
 
   function clicked(e) {
-    var target = e.target;
+    const target = e.target;
     console.log(target.id);
     target.style.backgroundColor = "gray";
     setClickedBoxes((state) => [...state, target.id]);
   }
 
-  const a = "one";
-  const b = "two";
-  const c = "four";
-  const d = "three";
-
-  function reset() {
+  function reset(e) {
+    let connections = [];
+    setConnections(connections);
+    setClickedBoxes([]);
     setConnect(false);
   }
 
   function handleConnect() {
     let clickedConnections = [];
     for (let i = 1; i < clickedBoxes.length; i++) {
-      let point = { from: clickedBoxes[i - 1], to: clickedBoxes[i] };
+      let point = { start: clickedBoxes[i - 1], end: clickedBoxes[i] };
       clickedConnections.push(point);
     }
     setConnections(clickedConnections);
@@ -39,7 +37,9 @@ function App() {
         <button type="button" onClick={handleConnect}>
           connect
         </button>
-        <button>reset</button>
+        <button type="button" onClick={reset}>
+          reset
+        </button>
       </div>
       <div className="wrapper">
         <div className="one" id="one" onClick={clicked}>
@@ -56,11 +56,14 @@ function App() {
         </div>
         {connections.map((connection, i) =>
           connect === true ? (
-            <SteppedLineTo
-              from={connection.from}
-              to={connection.to}
-              borderColor="black"
-            ></SteppedLineTo>
+            <Xarrow
+              start={connection.start}
+              end={connection.end}
+              color="gray"
+              path="grid"
+              strokeWidth={1}
+              showHead="false"
+            ></Xarrow>
           ) : (
             ""
           )
