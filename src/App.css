@@ -14,22 +14,7 @@
 .buttons {
   text-align: right;
 }
-.one {
-  background-color: lightgray;
-  text-align: center;
-  line-height: 100px;
-}
-.two {
-  background-color: lightgray;
-  text-align: center;
-  line-height: 100px;
-}
-.three {
-  background-color: lightgray;
-  text-align: center;
-  line-height: 100px;
-}
-.four {
+.box {
   background-color: lightgray;
   text-align: center;
   line-height: 100px;

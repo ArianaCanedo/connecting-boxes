@@ -16,6 +16,10 @@ function App() {
 
   function reset(e) {
     let connections = [];
+    const boxes = document.querySelectorAll(".box");
+    boxes.forEach((box) => {
+      box.style.backgroundColor = "lightgray";
+    });
     setConnections(connections);
     setClickedBoxes([]);
     setConnect(false);
@@ -42,16 +46,16 @@ function App() {
         </button>
       </div>
       <div className="wrapper">
-        <div className="one" id="one" onClick={clicked}>
+        <div className="box" id="one" onClick={clicked}>
           1
         </div>
-        <div className="two" id="two" onClick={clicked}>
+        <div className="box" id="two" onClick={clicked}>
           2
         </div>
-        <div className="three" id="three" onClick={clicked}>
+        <div className="box" id="three" onClick={clicked}>
           3
         </div>
-        <div className="four" id="four" onClick={clicked}>
+        <div className="box" id="four" onClick={clicked}>
           4
         </div>
         {connections.map((connection, i) =>
